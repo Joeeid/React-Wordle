@@ -68,37 +68,8 @@ function useWordle(solution, allWords, newGame) {
 		if (currentGuess === solution) {
 			setIsCorrect(true);
 			toast.clearWaitingQueue();
-			toast.success("Congratulations, you won!\nPress Enter to restart game.", {
-				position: "top-center",
-				autoClose: false,
-				hideProgressBar: true,
-				closeOnClick: false,
-				closeButton: false,
-				pauseOnHover: true,
-				draggable: false,
-				progress: undefined,
-				theme: "colored",
-				transition: Flip,
-			});
 		} else if (turn >= 5) {
 			toast.clearWaitingQueue();
-			toast.error(
-				`Better luck next time, the word was: ${solution}.\nPress Enter to restart game.`,
-				{
-					position: "top-center",
-					autoClose: false,
-					hideProgressBar: true,
-					closeOnClick: false,
-					closeButton: false,
-					pauseOnHover: true,
-					draggable: false,
-					progress: undefined,
-					theme: "colored",
-					transition: Flip,
-				}
-			);
-
-			return;
 		}
 		setCurrentGuess("");
 	}
@@ -190,6 +161,7 @@ function useWordle(solution, allWords, newGame) {
 		pressedKey,
 		handleKeyup,
 		handleKeyPress,
+		resetGame,
 	};
 }
 

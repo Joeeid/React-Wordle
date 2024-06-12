@@ -9,7 +9,7 @@ export default function App() {
 	const [solution, setSolution] = useState(null);
 
 	useEffect(() => {
-		fetch("http://localhost:3001/words")
+		fetch("http://192.168.12.148:3001/words")
 			.then((res) => {
 				if (!res.ok) {
 					throw new Error("Network response was not ok");
